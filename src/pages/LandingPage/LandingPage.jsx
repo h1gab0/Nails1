@@ -4,7 +4,6 @@ import * as echarts from 'echarts';
 import anime from 'animejs';
 import Splide from '@splidejs/splide';
 import '@splidejs/splide/dist/css/splide.min.css';
-import { GoogleLogin } from '@react-oauth/google';
 import './LandingPage.css';
 
 import Hero from './components/Hero';
@@ -29,15 +28,6 @@ const LandingPage = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
-
-  const handleGoogleSuccess = (credentialResponse) => {
-    console.log('Google Login Success:', credentialResponse);
-    // Here you would typically send the token to your backend to verify and create a session
-  };
-
-  const handleGoogleError = () => {
-    console.log('Google Login Failed');
-  };
 
   // Smooth scrolling for navigation links
   const handleNavClick = (e) => {
@@ -240,7 +230,6 @@ const LandingPage = () => {
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" onClick={handleNavClick} className="text-warm-gray hover:text-deep-charcoal transition-colors">Características</a>
             <a href="#pricing" onClick={handleNavClick} className="text-warm-gray hover:text-deep-charcoal transition-colors">Planes</a>
-            <GoogleLogin onSuccess={handleGoogleSuccess} onError={handleGoogleError} />
           </div>
           <button className="md:hidden p-2" id="mobile-menu-btn" onClick={() => setMobileMenuOpen(true)}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -264,7 +253,6 @@ const LandingPage = () => {
                     <nav className="space-y-4">
                         <a href="#features" onClick={handleNavClick} className="block text-warm-gray hover:text-deep-charcoal transition-colors">Características</a>
                         <a href="#pricing" onClick={handleNavClick} className="block text-warm-gray hover:text-deep-charcoal transition-colors">Planes</a>
-                        <GoogleLogin onSuccess={handleGoogleSuccess} onError={handleGoogleError} />
                     </nav>
                 </div>
             </div>
@@ -274,22 +262,15 @@ const LandingPage = () => {
       <Hero
         particlesContainer={particlesContainer}
         typedElement={typedElement}
-        handleGoogleSuccess={handleGoogleSuccess}
-        handleGoogleError={handleGoogleError}
       />
       <Features />
       <Video/>
       <Pricing
         isAnnualBilling={isAnnualBilling}
         setIsAnnualBilling={setIsAnnualBilling}
-        handleGoogleSuccess={handleGoogleSuccess}
-        handleGoogleError={handleGoogleError}
       />
       <Testimonials testimonialsSlider={testimonialsSlider} />
-      <CTA
-        handleGoogleSuccess={handleGoogleSuccess}
-        handleGoogleError={handleGoogleError}
-      />
+      <CTA />
       <Footer />
     </div>
   );
