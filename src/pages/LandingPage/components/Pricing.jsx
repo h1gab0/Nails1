@@ -1,7 +1,6 @@
 import React from 'react';
-import { GoogleLogin } from '@react-oauth/google';
 
-const Pricing = ({ isAnnualBilling, setIsAnnualBilling, handleGoogleSuccess, handleGoogleError }) => {
+const Pricing = ({ isAnnualBilling, setIsAnnualBilling }) => {
   return (
     <section id="pricing" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
@@ -39,7 +38,6 @@ const Pricing = ({ isAnnualBilling, setIsAnnualBilling, handleGoogleSuccess, han
               <li className="flex items-center"><svg className="text-sage-green mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg><span>Cupones y promociones</span></li>
               <li className="flex items-center"><svg className="text-sage-green mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg><span>Soporte por email</span></li>
             </ul>
-              <GoogleLogin onSuccess={handleGoogleSuccess} onError={handleGoogleError} />
           </div>
 
           <div className="pricing-card featured p-8 rounded-2xl relative">
@@ -59,7 +57,6 @@ const Pricing = ({ isAnnualBilling, setIsAnnualBilling, handleGoogleSuccess, han
               <li className="flex items-center"><svg className="text-sage-green mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg><span>Sitio web personalizado</span></li>
               <li className="flex items-center"><svg className="text-sage-green mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg><span>Soporte prioritario 24/7</span></li>
             </ul>
-            <GoogleLogin onSuccess={handleGoogleSuccess} onError={handleGoogleError} />
           </div>
         </div>
       </div>

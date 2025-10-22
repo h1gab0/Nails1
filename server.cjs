@@ -8,6 +8,7 @@ const { initDb } = require('./db.cjs');
 const authRoutes = require('./routes/auth.routes.cjs');
 const instanceRoutes = require('./routes/instance.routes.cjs');
 const dataRoutes = require('./routes/data.routes.cjs');
+const userRoutes = require('./routes/user.routes.cjs');
 
 // Middleware
 app.use(cors({ origin: true, credentials: true }));
@@ -26,6 +27,7 @@ app.use(session({
 app.use('/api', authRoutes);
 app.use('/api', instanceRoutes);
 app.use('/api/:instanceId', dataRoutes);
+app.use('/api', userRoutes);
 
 
 // Error handling middleware
